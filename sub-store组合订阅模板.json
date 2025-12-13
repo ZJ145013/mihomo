@@ -1,0 +1,91 @@
+{
+    "name": "sub-store组合订阅",
+    "displayName": "sub-store组合订阅",
+    "form": "",
+    "remark": "",
+    "mergeSources": "",
+    "ignoreFailedRemoteSub": "quiet",
+    "passThroughUA": false,
+    "icon": "",
+    "process": [
+        {
+            "type": "Quick Setting Operator",
+            "args": {
+                "useless": "DISABLED",
+                "udp": "DEFAULT",
+                "scert": "ENABLED",
+                "tfo": "DEFAULT",
+                "vmess aead": "DEFAULT"
+            }
+        },
+        {
+            "type": "Script Operator",
+            "args": {
+                "content": "https://raw.githubusercontent.com/xream/scripts/refs/heads/main/surge/modules/sub-store-scripts/sub-info/sum.js",
+                "mode": "link",
+                "arguments": {}
+            },
+            "customName": "",
+            "id": "28460290.72169969",
+            "disabled": false
+        },
+        {
+            "type": "Regex Filter",
+            "args": {
+                "keep": false,
+                "regex": [
+                    "时间|优惠|资源服|教学服|基础服|建议|软件|问题|69云|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|付费|失联|设置|总计|(\\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))",
+                    "家宽|国际|美国"
+                ]
+            }，
+            "id": "10354460.04108187",
+            "disabled": false
+        },
+        {
+            "type": "Flag Operator",
+            "args": {
+                "mode": "add",
+                "tw": "ws"
+            }，
+            "id": "72382003.7008269",
+            "disabled": false
+        }，
+        {
+            "type": "Sort Operator",
+            "args": "asc",
+            "id": "25116284.22819716",
+            "disabled": false
+        }，
+        {
+            "type": "Resolve Domain Operator",
+            "args": {
+                "provider": "Ali",
+                "type": "IPv6",
+                "filter": "disabled",
+                "cache": "enabled",
+                "url": "",
+                "edns": ""
+            },
+            "customName": "",
+            "id": "69491248.72493628",
+            "disabled": false
+        },
+        {
+            "type": "Script Operator",
+            "args": {
+                "content": "// IPv6节点入口解析命名脚本,如需对域名的AAAA记录解析可以启用上面的操作\nif ( (ProxyUtils.isIPv6($server.server) || $server.name.match(/ipv6|v6/i)) && !$server.name.includes('[IPv6]') ) {\n  $server.name = `${$server.name} [IPv6]`;\n}\n\nif ($server._domain) $server.server = $server._domain",
+                "mode": "script",
+                "arguments": {}
+            },
+            "customName": "",
+            "id": "56832536.65291016",
+            "disabled": false
+        }
+    ],
+    "subscriptions": [],
+    "tag": [],
+    "subscriptionTags": [],
+    "display-name": "sub-store组合订阅",
+    "subUserinfo": "upload=4219837078; download=182320557840; total=1540739825664 ; expire=1767356258",
+    "isIconColor": true
+}

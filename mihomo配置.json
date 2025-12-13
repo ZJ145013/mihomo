@@ -1,0 +1,30 @@
+{
+    "name": "mihomo_config",
+    "displayName": "mihomo_config",
+    "remark": "",
+    "icon": "https://raw.githubusercontent.com/cc63/ICON/main/icons/Clash.png",
+    "source": "local",
+    "sourceType": "collection",
+    "sourceName": "sub-store组合订阅",
+    "process": [
+        {
+            "type": "Script Operator",
+            "args": {
+                "content": "https://raw.githubusercontent.com/ZJ145013/something/refs/heads/main/mihomo/rules.yaml#noCache",
+                "mode": "link",
+                "arguments": {}
+            },
+            "customName": "配置文件",
+            "id": "configfile-002",
+            "disabled": false
+        }
+    ],
+    "type": "mihomoProfile",
+    "content": "// 填入文件内容",
+    "download": true,
+    "display-name": "mihomo_config",
+    "ignoreFailedRemoteFile": false,
+    "subInfoUrl": "",
+    "isIconColor": true,
+    "tag": []
+}
