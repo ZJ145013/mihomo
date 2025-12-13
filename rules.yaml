@@ -58,7 +58,7 @@ FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客�
 proxy-groups:
   # --- 核心选择策略 ---
   - name: 🚀 节点选择
-    type: select
+    输入: select
     proxies:
       - ⚡ 自动选择
       - 🖐 手动选择
@@ -75,7 +75,7 @@ proxy-groups:
       - 🔒 国内服务
 
   - name: 🖐 手动选择
-    type: select
+    输入: select
     url: 'http://www.google.com/blank.html'
     include-all: true
     filter: *FilterAll
@@ -140,82 +140,82 @@ proxy-groups:
 
   # --- 应用分流策略 ---
   - name: 🛑 广告拦截
-    type: select
+    输入: select
     proxies:
       - REJECT
   - name: 💬 AI 服务
-    type: select
+    输入: select
     proxies:
       - 🇺🇸 美国自动策略
       - 🇯🇵 日本自动策略
       - 🇸🇬 新国自动策略
       - 🚀 节点选择
   - name: 📹 油管视频
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
   - name: 🔍 谷歌服务
-    type: select
+    输入: select
     proxies:
       - 🇺🇸 美国自动策略
       - 🇯🇵 日本自动策略
       - 🇸🇬 新国自动策略
       - 🚀 节点选择
   - name: 🏠 私有网络
-    type: select
+    输入: select
     proxies:
       - DIRECT
   - name: 🔒 国内服务
-    type: select
+    输入: select
     proxies:
       - DIRECT
   - name: 📲 电报消息
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
   - name: 🐱 Github
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
   - name: Ⓜ️ 微软服务
-    type: select
+    输入: select
     proxies:
       - DIRECT
       - 🚀 节点选择
   - name: 🍏 苹果服务
-    type: select
+    输入: select
     proxies:
       - DIRECT
       - 🇺🇸 美国自动策略
   - name: 🌐 社交媒体
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
   - name: 🎬 流媒体
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
   - name: 🎮 游戏平台
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
       - DIRECT
   - name: 📚 教育资源
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
       - DIRECT
   - name: ☁️ 云服务
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
       - DIRECT
   - name: 🌐 非中国
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
   - name: 🐟 漏网之鱼
-    type: select
+    输入: select
     proxies:
       - 🚀 节点选择
       - DIRECT
@@ -326,84 +326,84 @@ geox-url:
 # =========================
 rule-providers:
   category-ads-all:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ads-all.mrs
     path: ./ruleset/category-ads-all.mrs
     interval: 86400
   category-ai-chat-!cn:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-chat-!cn.mrs
     path: ./ruleset/category-ai-chat-!cn.mrs
     interval: 86400
   youtube:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs
     path: ./ruleset/youtube.mrs
     interval: 86400
   google:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs
     path: ./ruleset/google.mrs
     interval: 86400
   private:
-    type: http
+    输入: http
     format: mrs
     behavior: ipcidr
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs
     path: ./ruleset/private.mrs
     interval: 86400
   geolocation-cn:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-cn.mrs
     path: ./ruleset/geolocation-cn.mrs
     interval: 86400
   cn:
-    type: http
+    输入: http
     format: mrs
     behavior: ipcidr
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs
     path: ./ruleset/cn.mrs
     interval: 86400
   telegram:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs
     path: ./ruleset/telegram.mrs
     interval: 86400
   github:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs
     path: ./ruleset/github.mrs
     interval: 86400
   gitlab:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/gitlab.mrs
     path: ./ruleset/gitlab.mrs
     interval: 86400
   microsoft:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs
     path: ./ruleset/microsoft.mrs
     interval: 86400
   apple:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple.mrs
@@ -417,182 +417,182 @@ rule-providers:
     path: ./ruleset/facebook.mrs
     interval: 86400
   instagram:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/instagram.mrs
     path: ./ruleset/instagram.mrs
     interval: 86400
   twitter:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitter.mrs
     path: ./ruleset/twitter.mrs
     interval: 86400
   tiktok:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/tiktok.mrs
     path: ./ruleset/tiktok.mrs
     interval: 86400
   linkedin:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/linkedin.mrs
     path: ./ruleset/linkedin.mrs
     interval: 86400
   netflix:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/netflix.mrs
     path: ./ruleset/netflix.mrs
     interval: 86400
   hulu:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/hulu.mrs
     path: ./ruleset/hulu.mrs
     interval: 86400
   disney:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/disney.mrs
     path: ./ruleset/disney.mrs
     interval: 86400
   hbo:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/hbo.mrs
     path: ./ruleset/hbo.mrs
     interval: 86400
   amazon:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/amazon.mrs
     path: ./ruleset/amazon.mrs
     interval: 86400
   bahamut:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bahamut.mrs
     path: ./ruleset/bahamut.mrs
     interval: 86400
   steam:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs
     path: ./ruleset/steam.mrs
     interval: 86400
   epicgames:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/epicgames.mrs
     path: ./ruleset/epicgames.mrs
     interval: 86400
   ea:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ea.mrs
     path: ./ruleset/ea.mrs
     interval: 86400
   ubisoft:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ubisoft.mrs
     path: ./ruleset/ubisoft.mrs
     interval: 86400
   blizzard:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/blizzard.mrs
     path: ./ruleset/blizzard.mrs
     interval: 86400
   coursera:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/coursera.mrs
     path: ./ruleset/coursera.mrs
     interval: 86400
   edx:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/edx.mrs
     path: ./ruleset/edx.mrs
     interval: 86400
   udemy:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/udemy.mrs
     path: ./ruleset/udemy.mrs
     interval: 86400
   khanacademy:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/khanacademy.mrs
     path: ./ruleset/khanacademy.mrs
     interval: 86400
   category-scholar-!cn:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-scholar-!cn.mrs
     path: ./ruleset/category-scholar-!cn.mrs
     interval: 86400
   aws:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/aws.mrs
     path: ./ruleset/aws.mrs
     interval: 86400
   azure:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/azure.mrs
     path: ./ruleset/azure.mrs
     interval: 86400
   digitalocean:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/digitalocean.mrs
     path: ./ruleset/digitalocean.mrs
     interval: 86400
   heroku:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/heroku.mrs
     path: ./ruleset/heroku.mrs
     interval: 86400
   dropbox:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/dropbox.mrs
     path: ./ruleset/dropbox.mrs
     interval: 86400
   geolocation-!cn:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs
@@ -604,6 +604,8 @@ rule-providers:
 # =========================
 rules: # 注意，分流规则是按自上而下、首次命中即停的原则进行匹配，因此重要的规则应该放前面
  - DOMAIN-KEYWORD,shanghailife,🔒 国内服务
+ - DOMAIN,runanytime.hxi.me,🔒 国内服务
+ - DOMAIN-SUFFIX,elysia.h-e.top,🔒 国内服务
  - DOMAIN-KEYWORD,modelscope,🔒 国内服务
  - DOMAIN-SUFFIX,colin1112.me,🔒 国内服务
  - DOMAIN-SUFFIX,69yun69.com,🇭🇰 香港自动策略
