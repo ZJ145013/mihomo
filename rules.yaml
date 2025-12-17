@@ -89,12 +89,12 @@ proxy-groups:
   # --- 家宽/住宅IP 链式代理策略组 (新增) ---
   - name: 🏠 家宽自动策略
     <<: *UrlTest
-    # use: [组合订阅]  # 使用 proxy-providers 时取消注释
     filter: *FilterResidential
   - name: ⛓️ 家宽链式代理
     type: select
     proxies:
-      - 🏠 家宽自动策略dialer-proxy: 🚀 节点选择
+      - 🏠 家宽自动策略
+    dialer-proxy: 🚀 节点选择
 
   # --- 功能性自动策略组 ---
   # 修复：为所有区域策略组添加 `use: [组合订阅]`
