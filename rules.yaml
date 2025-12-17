@@ -605,6 +605,7 @@ rule-providers:
 rules: # 注意，分流规则是按自上而下、首次命中即停的原则进行匹配，因此重要的规则应该放前面
  - DOMAIN-KEYWORD,shanghailife,🔒 国内服务
  - DOMAIN,runanytime.hxi.me,🔒 国内服务
+ - IP-CIDR,142.171.44.177/32,🇺🇸 美国手动策略,no-resolve
  - DOMAIN-SUFFIX,elysia.h-e.top,🔒 国内服务
  - DOMAIN-KEYWORD,modelscope,🔒 国内服务
  - DOMAIN-SUFFIX,colin1112.me,🔒 国内服务
