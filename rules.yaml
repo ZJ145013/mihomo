@@ -94,7 +94,7 @@ proxy-groups:
     type: select
     proxies:
       - 🏠 家宽自动策略
-    dialer-proxy: 🚀 节点选择
+    dialer-proxy: 🇺🇸 美国手动策略
 
   # --- 功能性自动策略组 ---
   # 修复：为所有区域策略组添加 `use: [组合订阅]`
@@ -119,8 +119,9 @@ proxy-groups:
     # use: [组合订阅]
     filter: *FilterSG
   - name: 🇺🇸 美国自动策略
-    <<: *UrlTest
-    # use: [组合订阅]
+    type: select
+    url: 'http://www.google.com/blank.html'
+    include-all: true
     filter: *FilterUS
   - name: 🇬🇧 英国自动策略
     <<: *UrlTest
