@@ -118,7 +118,7 @@ proxy-groups:
     <<: *UrlTest
     # use: [组合订阅]
     filter: *FilterSG
-  - name: 🇺🇸 美国自动策略
+  - name: 🇺🇸 美国手动策略
     type: select
     url: 'http://www.google.com/blank.html'
     include-all: true
