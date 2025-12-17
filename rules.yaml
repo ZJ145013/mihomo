@@ -93,8 +93,8 @@ proxy-groups:
   - name: ⛓️ 家宽链式代理
     type: select
     proxies:
-      - 🏠 家宽自动策略
-    dialer-proxy: 🇺🇸 美国手动策略
+      - 🇺🇸 美国手动策略
+    dialer-proxy: 🏠 家宽自动策略
 
   # --- 功能性自动策略组 ---
   # 修复：为所有区域策略组添加 `use: [组合订阅]`
