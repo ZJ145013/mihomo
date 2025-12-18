@@ -132,7 +132,7 @@ proxy-groups:
     # use: [组合订阅]
     filter: *FilterSG
   - name: 🇺🇸 美国手动策略
-    输入: select
+    type: select
     url: 'http://www.google.com/blank.html'
     include-all: true
     filter: *FilterUS
