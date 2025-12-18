@@ -107,8 +107,8 @@ proxy-groups:
   - name: ⛓️ 机场中转
     type: select
     proxies:
-      - ⚡ 中转自动策略
-    dialer-proxy: 🇺🇸 美国手动策略
+      - 🇺🇸 美国手动策略
+    dialer-proxy: ⚡ 中转自动策略
 
   # --- 功能性自动策略组 ---
   # 修复：为所有区域策略组添加 `use: [组合订阅]`
