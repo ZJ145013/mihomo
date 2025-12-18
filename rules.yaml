@@ -45,7 +45,7 @@ FilterGame: &FilterGame '^(?=.*((?i)游戏|🎮|(\b(GAME)(\d+)?\b)))(?!.*((?i)�
 FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$'
 
 # 锚点：家宽/住宅IP节点筛选
-FilterResidential: &FilterResidential '^(?=.*(台湾|🇹🇼|TW))(?=.*直连-家宽).*$'
+FilterResidential: &FilterResidential '^(?=.*((?i)原生|解锁|NF|Netflix|Disney|GPT|ChatGPT|流媒体|Media|低倍|0\.[0-9]x|家宽|住宅|ISP|Native))(?!.*((?i)IPLC|IEPL|专线|中转|入口|过期|到期|试用|剩余|官网|套餐|群|频道)).*$'
 
 # 锚点：机场中转IP节点筛选
 FilterPremium: &FilterPremium '^(?=.*((?i)IEPL|专线|高级|Premium|Pro|VIP|CN2|GIA|CMIN2|AS9929|AIA|精品|企业))(?!.*((?i)回国|校园|游戏|🎮|\bGAME\b|官网|套餐|过期|到期|试用|剩余|流量)).*$'
