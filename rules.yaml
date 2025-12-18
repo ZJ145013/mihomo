@@ -47,6 +47,9 @@ FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客�
 # 锚点：家宽/住宅IP节点筛选
 FilterResidential: &FilterResidential '^(?=.*((?i)家宽|家庭|住宅|原生|本土|宽带|Residential|Resi\b|ISP|Native|Home\s?IP|Broadband|IPLC家|真实IP))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 
+# 锚点：机场中转IP节点筛选
+FilterPremium: &FilterPremium '^(?=.*((?i)IPLC|IEPL|专线|高级|Premium|Pro|VIP|CN2|GIA|BGP|CMIN2|AS9929|AIA|精品|企业))(?!.*((?i)回国|校园|游戏|🎮|\bGAME\b|官网|套餐|过期|到期|试用|剩余|流量)).*$'
+
 # =========================
 # 代理组配置
 # =========================
@@ -86,7 +89,7 @@ proxy-groups:
     # 优化：同样使用FilterAll避免无效节点参与测速
     filter: *FilterAll
 
-  # --- 家宽/住宅IP 链式代理策略组 (新增) ---
+  # --- 家宽/住宅IP 链式代理策略组 ---
   - name: 🏠 家宽自动策略
     <<: *UrlTest
     filter: *FilterResidential
@@ -94,6 +97,16 @@ proxy-groups:
     type: select
     proxies:
       - 🏠 家宽自动策略
+    dialer-proxy: 🇺🇸 美国手动策略
+
+  # --- 机场中转IP 链式代理策略组 ---
+  - name: ⚡ 中转自动策略
+    <<: *UrlTest
+    filter: *FilterPremium
+  - name: ⛓️ 机场中转
+    type: select
+    proxies:
+      - ⚡ 中转自动策略
     dialer-proxy: 🇺🇸 美国手动策略
 
   # --- 功能性自动策略组 ---
@@ -119,7 +132,7 @@ proxy-groups:
     # use: [组合订阅]
     filter: *FilterSG
   - name: 🇺🇸 美国手动策略
-    type: select
+    输入: select
     url: 'http://www.google.com/blank.html'
     include-all: true
     filter: *FilterUS
