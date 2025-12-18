@@ -48,7 +48,7 @@ FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客�
 FilterResidential: &FilterResidential '^(?=.*((?i)家宽|家庭|住宅|原生|本土|宽带|Residential|Resi\b|ISP|Native|Home\s?IP|Broadband|IPLC家|真实IP))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 
 # 锚点：机场中转IP节点筛选
-FilterPremium: &FilterPremium '^(?=.*((?i)IPLC|IEPL|专线|高级|Premium|Pro|VIP|CN2|GIA|BGP|CMIN2|AS9929|AIA|精品|企业))(?!.*((?i)回国|校园|游戏|🎮|\bGAME\b|官网|套餐|过期|到期|试用|剩余|流量)).*$'
+FilterPremium: &FilterPremium '^(?=.*((?i)IEPL|专线|高级|Premium|Pro|VIP|CN2|GIA|BGP|CMIN2|AS9929|AIA|精品|企业))(?!.*((?i)回国|校园|游戏|🎮|\bGAME\b|官网|套餐|过期|到期|试用|剩余|流量)).*$'
 
 # =========================
 # 代理组配置
