@@ -623,7 +623,7 @@ rules: # 注意，分流规则是按自上而下、首次命中即停的原则�
  - DOMAIN,bees.fswork.cc,🔒 国内服务
  - DOMAIN,proxy.942645.xyz,🇭🇰 香港自动策略
  - DOMAIN-KEYWORD,achuanai,🔒 国内服务
- - IP-CIDR,142.171.44.177/32,🇺🇸 美国手动策略,no-resolve
+ - IP-CIDR,142.171.44.177/32,🖐 手动选择,no-resolve
  - DOMAIN-SUFFIX,elysia.h-e.top,🔒 国内服务
  - DOMAIN-KEYWORD,modelscope,🔒 国内服务
  - DOMAIN-SUFFIX,colin1112.me,🔒 国内服务
