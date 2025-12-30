@@ -96,7 +96,6 @@ proxy-groups:
     filter: *FilterResidential
   - name: ⛓️ 家宽链式代理
     type: select
-    hidden: true
     proxies:
       - 🏠 家宽自动策略
     dialer-proxy: 🇺🇸 美国手动策略
@@ -107,7 +106,6 @@ proxy-groups:
     filter: *FilterPremium
   - name: ⛓️ 机场中转
     type: select
-    hidden: true
     proxies:
       - 🇺🇸 美国手动策略
     dialer-proxy: ⚡ 中转自动策略
@@ -155,6 +153,7 @@ proxy-groups:
   # --- 应用分流策略 ---
   - name: 🛑 广告拦截
     type: select
+    hidden: true
     proxies:
       - REJECT
   - name: 💬 AI 服务
