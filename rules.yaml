@@ -23,7 +23,7 @@
 
 # 策略组参数锚点
 # 锚点 - 时延优选参数 [每 6 秒一次惰性健康检查，容差 20ms，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
-UrlTest: &UrlTest {type: url-test, interval: 6, tolerance: 20, lazy: true, url: 'http://www.google.com/blank.html', disable-udp: false, timeout: 2000, max-failed-times: 3, include-all: true}
+UrlTest: &UrlTest {type: url-test, interval: 6, tolerance: 20, lazy: true, url: 'http://www.google.com/blank.html', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: true, include-all: true}
 # 锚点 - 故障转移参数 [每 6 秒一次惰性健康检查，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
 FallBack: &FallBack {type: fallback, interval: 6, lazy: true, url: 'http://www.google.com/blank.html', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: true, include-all: true}
 # 锚点 - 负载均衡参数 [每 6 秒一次惰性健康检查，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
@@ -96,6 +96,7 @@ proxy-groups:
     filter: *FilterResidential
   - name: ⛓️ 家宽链式代理
     type: select
+    hidden: true
     proxies:
       - 🏠 家宽自动策略
     dialer-proxy: 🇺🇸 美国手动策略
@@ -106,6 +107,7 @@ proxy-groups:
     filter: *FilterPremium
   - name: ⛓️ 机场中转
     type: select
+    hidden: true
     proxies:
       - 🇺🇸 美国手动策略
     dialer-proxy: ⚡ 中转自动策略
