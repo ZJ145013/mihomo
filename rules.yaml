@@ -619,11 +619,6 @@ rule-providers:
 # =========================
 rules: # 注意，分流规则是按自上而下、首次命中即停的原则进行匹配，因此重要的规则应该放前面
  - DOMAIN-KEYWORD,shanghailife,🔒 国内服务
- - DOMAIN-SUFFIX,hxi.me,🔒 国内服务
- - DOMAIN-SUFFIX,qzz.io,🔒 国内服务
- - DOMAIN-SUFFIX,hybgzs.com,🔒 国内服务
- - DOMAIN-SUFFIX,x666.me,🔒 国内服务
- - DOMAIN-SUFFIX,pp.ua,🔒 国内服务
  - DOMAIN-SUFFIX,atstudy.com,🔒 国内服务
  - DOMAIN,bees.fswork.cc,🔒 国内服务
  - DOMAIN,proxy.942645.xyz,🇭🇰 香港自动策略
@@ -631,7 +626,6 @@ rules: # 注意，分流规则是按自上而下、首次命中即停的原则�
  - IP-CIDR,142.171.44.177/32,🖐 手动选择,no-resolve
  - DOMAIN-SUFFIX,elysia.h-e.top,🔒 国内服务
  - DOMAIN-KEYWORD,modelscope,🔒 国内服务
- - DOMAIN-SUFFIX,colin1112.me,🔒 国内服务
  - DOMAIN-SUFFIX,69yun69.com,🇭🇰 香港自动策略
  - RULE-SET,category-ads-all,🛑 广告拦截
  - RULE-SET,category-ai-chat-!cn,💬 AI 服务
