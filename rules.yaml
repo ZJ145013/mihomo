@@ -50,6 +50,9 @@ FilterResidential: &FilterResidential '^.*(?i)(家宽|住宅|isp|residential|nat
 # 锚点：机场中转IP节点筛选
 FilterPremium: &FilterPremium '^(?=.*((?i)IEPL|专线|高级|Premium|Pro|VIP|CN2|GIA|CMIN2|AS9929|AIA|精品|企业))(?!.*((?i)回国|校园|游戏|🎮|\bGAME\b|官网|套餐|过期|到期|试用|剩余|流量)).*$'
 
+# 锚点：CF节点筛选
+FilterCF_Strict: &FilterCF_Strict '^(?=.*((?i)CF官方优选))(?!.*((?i)过期|到期|剩余|流量)).*$'
+
 # =========================
 # 代理组配置
 # =========================
@@ -67,6 +70,7 @@ proxy-groups:
       - 🖐 手动选择
       - ⛓️ 机场中转
       - ⛓️ 家宽链式代理
+      - ⛓️ CF落地
       - 🇭🇰 香港自动策略
       - 🇹🇼 台湾自动策略
       - 🇯🇵 日本自动策略
@@ -109,6 +113,16 @@ proxy-groups:
     proxies:
       - 🇺🇸 美国手动策略
     dialer-proxy: ⚡ 中转自动策略
+
+  # --- CF中转 链式代理策略组 ---
+  - name: ⚡ CF自动策略
+    <<: *UrlTest
+    filter: *FilterCF_Strict
+  - name: ⛓️ CF落地
+    type: select
+    proxies:
+      - ⚡ CF自动策略
+    dialer-proxy: 🇺🇸 美国手动策略
 
   # --- 功能性自动策略组 ---
   # 修复：为所有区域策略组添加 `use: [组合订阅]`
@@ -160,6 +174,7 @@ proxy-groups:
     type: select
     proxies:
       - ⛓️ 家宽链式代理
+      - ⛓️ CF落地
       - 🇺🇸 美国手动策略
       - 🇯🇵 日本自动策略
       - 🇸🇬 新国自动策略
@@ -172,6 +187,7 @@ proxy-groups:
     type: select
     proxies:
       - ⛓️ 家宽链式代理
+      - ⛓️ CF落地
       - 🇺🇸 美国手动策略
       - 🇯🇵 日本自动策略
       - 🇸🇬 新国自动策略
