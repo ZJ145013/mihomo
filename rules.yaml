@@ -69,6 +69,7 @@ proxy-groups:
       - 🇹🇼 台湾自动策略
       - 🇸🇬 新国自动策略
       - 🇺🇸 美国手动策略
+      - ⛓️ 家宽链式代理
       - 🔒 国内服务
 
   - name: 🖐 手动选择
@@ -91,26 +92,6 @@ proxy-groups:
     type: select
     proxies:
       - 🏠 家宽自动策略
-    dialer-proxy: 🇺🇸 美国手动策略
-
-  # --- 机场中转IP 链式代理策略组 ---
-  - name: ⚡ 中转自动策略
-    <<: *UrlTest
-    filter: *FilterPremium
-  - name: ⛓️ 机场中转
-    type: select
-    proxies:
-      - 🇺🇸 美国手动策略
-    dialer-proxy: ⚡ 中转自动策略
-
-  # --- CF中转 链式代理策略组 ---
-  - name: ⚡ CF自动策略
-    <<: *UrlTest
-    filter: *FilterCF_Strict
-  - name: ⛓️ CF落地
-    type: select
-    proxies:
-      - ⚡ CF自动策略
     dialer-proxy: 🇺🇸 美国手动策略
 
   # --- 功能性自动策略组 ---
@@ -162,7 +143,6 @@ proxy-groups:
   - name: 💬 AI 服务
     type: select
     proxies:
-      - ⛓️ 家宽链式代理
       - 🚀 节点选择
   - name: 📹 油管视频
     type: select
@@ -171,7 +151,6 @@ proxy-groups:
   - name: 🔍 谷歌服务
     type: select
     proxies:
-      - ⛓️ 家宽链式代理
       - 🚀 节点选择
   - name: 🏠 私有网络
     type: select
@@ -604,7 +583,7 @@ rule-providers:
     path: ./ruleset/dropbox.mrs
     interval: 86400
   geolocation-!cn:
-    type: http
+    输入: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs
