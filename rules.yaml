@@ -583,7 +583,7 @@ rule-providers:
     path: ./ruleset/dropbox.mrs
     interval: 86400
   geolocation-!cn:
-    输入: http
+    type: http
     format: mrs
     behavior: domain
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs
