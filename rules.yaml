@@ -597,6 +597,8 @@ rule-providers:
 # =========================
 rules: # 注意，分流规则是按自上而下、首次命中即停的原则进行匹配，因此重要的规则应该放前面
  - DOMAIN-KEYWORD,shanghailife,🔒 国内服务
+ - DOMAIN,ksy.78qyz.top,🔒 国内服务
+ - DOMAIN,the-x.cn,🔒 国内服务
  - DOMAIN-SUFFIX,atstudy.com,🔒 国内服务
  - DOMAIN-SUFFIX,yikeapi.org,🔒 国内服务
  - DOMAIN,bees.fswork.cc,🔒 国内服务
