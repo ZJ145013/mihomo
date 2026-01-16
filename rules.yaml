@@ -144,6 +144,7 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
+      - 🖐 手动选择
       - 🇺🇸 美国手动策略
   - name: 📹 油管视频
     type: select
@@ -153,6 +154,7 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
+      - 🖐 手动选择
       - 🇺🇸 美国手动策略
   - name: 🏠 私有网络
     type: select
