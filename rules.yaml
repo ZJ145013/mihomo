@@ -605,7 +605,6 @@ rules: # 注意，分流规则是按自上而下、首次命中即停的原则�
  - DOMAIN-SUFFIX,yikeapi.org,🔒 国内服务
  - DOMAIN,bees.fswork.cc,🔒 国内服务
  - DOMAIN,proxy.942645.xyz,🇭🇰 香港自动策略
- - DOMAIN,geminicli.942645.xyz,🇺🇸 美国手动策略
  - DOMAIN-KEYWORD,achuanai,🔒 国内服务
  - IP-CIDR,142.171.44.177/32,🖐 手动选择,no-resolve
  - DOMAIN-SUFFIX,elysia.h-e.top,🔒 国内服务
