@@ -53,9 +53,6 @@ FilterZX: &FilterZX '^(?=.*((?i)专线))(?!.*((?i)过期|到期|剩余|流量)).
 # 锚点：美国落地筛选
 FilterUSLD: &FilterUSLD '^(?=.*((?i)US-vless-rea))(?!.*((?i)过期|到期|剩余|流量)).*$'
 
-# 锚点：GCP地筛选
-FilterGCP: &FilterGCP '^(?=.*((?i)GCP-vless-rea))(?!.*((?i)过期|到期|剩余|流量)).*$'
-
 # =========================
 # 代理组配置
 # =========================
@@ -73,7 +70,6 @@ proxy-groups:
       - 🇸🇬 新国自动策略
       - 🇺🇸 美国手动策略
       - 🏠 家宽链式代理
-      - ⛓️ GCP链式代理
       - ⛓️ 专线链式代理
       - 🔒 国内服务
 
@@ -112,16 +108,6 @@ proxy-groups:
     proxies:
       - 🇺🇸 美国落地
     dialer-proxy: ⛓️ 专线自动策略
-
-  # --- GCP 链式代理策略组 ---
-  - name: ⛓️ GCP自动策略
-    <<: *UrlTest
-    filter: *FilterGCP
-  - name: ⛓️ GCP链式代理
-    type: select
-    proxies:
-      - ⛓️ GCP自动策略
-    dialer-proxy: 🇺🇸 美国落地
 
   # --- 功能性自动策略组 ---
   # 修复：为所有区域策略组添加 `use: [组合订阅]`
