@@ -608,6 +608,12 @@ rule-providers:
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs
     path: ./ruleset/geolocation-!cn.mrs
     interval: 86400
+  bilibili:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili.yaml
+    path: ./ruleset/bilibili
+    interval: 86400
 
 # =========================
 # 分流规则
@@ -665,4 +671,5 @@ rules: # 注意，分流规则是按自上而下、首次命中即停的原则�
  - RULE-SET,heroku,☁️ 云服务
  - RULE-SET,dropbox,☁️ 云服务
  - RULE-SET,geolocation-!cn,🌐 非中国
+ - RULE-SET,bilibili,🔒 国内服务
  - MATCH,🐟 漏网之鱼
